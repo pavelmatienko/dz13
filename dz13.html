@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style.css">
+  <!-- <link rel="stylesheet" href="/style.css"> -->
   <style>
     * {
     padding: 0;
@@ -65,36 +65,36 @@
     </div>
   </div>
   <script>
-    class Accordeon {
-  constructor(list){
-    this.list = list;
-    let panelItem = document.querySelectorAll('.title');
-    this.bodyItem = document.querySelectorAll('.body');
+          class Accordeon {
+        constructor(list){
+          this.list = list;
+          let panelItem = document.querySelectorAll('.title');
+          this.bodyItem = document.querySelectorAll('.body');
 
-    let activePanel;
-    panelItem.forEach(function(item) {
-      item.addEventListener('click', function() {
-        //показать панель
-        this.classList.add('panel-active');
-        this.nextElementSibling.classList.add('active');
-        //спрятать панель
-        if (activePanel) {
-          activePanel.classList.remove('panel-active');
-          activePanel.nextElementSibling.classList.remove('active');
+          let activePanel;
+          panelItem.forEach(function(item) {
+            item.addEventListener('click', function() {
+              //показать панель
+              this.classList.add('panel-active');
+              this.nextElementSibling.classList.add('active');
+              //спрятать панель
+              if (activePanel) {
+                activePanel.classList.remove('panel-active');
+                activePanel.nextElementSibling.classList.remove('active');
+              }
+              //обновить
+              activePanel = (activePanel === this) ? 0 : this;
+            });
+          });
         }
-        //обновить
-        activePanel = (activePanel === this) ? 0 : this;
-      });
-    });
-  }
-}
-// let accor = new Accordeon;
-// console.log(accor);
+      }
+      // let accor = new Accordeon;
+      // console.log(accor);
 
   </script>
-  <!-- <script src="./Accordeon.js"></script>
+  <!-- <script src="./Accordeon.js"></script>-->
   <script>
     new Accordeon(document.getElementById('list'));
-  </script> -->
+  </script> 
 </body>
 </html>
